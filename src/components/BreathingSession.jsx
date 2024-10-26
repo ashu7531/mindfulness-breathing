@@ -16,6 +16,11 @@ function BreathingSession({ selectedExercise }) {
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      breathingInSound.pause();
+      breathingOutSound.pause();
+      holdingSound.pause();
+    }
   };
 
   useEffect(() => {
