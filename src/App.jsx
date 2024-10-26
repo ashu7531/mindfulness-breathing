@@ -1,24 +1,3 @@
-// import React, { useState } from 'react';
-// import './App.css';
-// import ExerciseCards from './components/ExerciseCards';
-// import BreathingSession from './components/BreathingSession';
-
-// function App() {
-//   const [selectedExercise, setSelectedExercise] = useState(null);
-
-//   const handleSelectExercise = (exercise) => {
-//     setSelectedExercise(exercise);
-//   };
-
-//   return (
-//     <div className="App">
-//       <ExerciseCards onSelectExercise={handleSelectExercise} />
-//       <BreathingSession selectedExercise={selectedExercise} />
-//     </div>
-//   );
-// }
-
-// export default App;
 import React, { useState } from 'react';
 import './App.css';
 import ExerciseCards from './components/ExerciseCards';
@@ -30,11 +9,11 @@ function App() {
 
   const handleSelectExercise = (exercise) => {
     setSelectedExercise(exercise);
-    setShowAllExercises(false); // Show only selected exercise on smaller screens
+    setShowAllExercises(false);
   };
 
   const handleShowAllExercises = () => {
-    setShowAllExercises(true); // Display all exercises again
+    setShowAllExercises(true);
   };
 
   return (
