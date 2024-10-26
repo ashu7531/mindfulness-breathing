@@ -1,88 +1,4 @@
-/* .breathing-session {
-  text-align: center;
-  margin-top: 50px;
-  width: 100%;
-}
-
-.circle-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.animation-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #e0f7fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease;
-  border: 2px solid #007bff;
-  position: relative;
-}
-
-.animation-circle p {
-  position: absolute;
-  bottom: 10px;
-  font-size: 1.2em;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.icon {
-  font-size: 2em;
-  color: #007bff;
-  cursor: pointer;
-}
-
-
-.breathing-session.inhale .animation-circle {
-  animation: inhale-animation 4s ease-in-out infinite;
-}
-
-@keyframes inhale-animation {
-  0% {
-    transform: scale(1);
-    background-color: #e0f7fa;
-  }
-  100% {
-    transform: scale(0.8);
-    background-color: #b3e5fc;
-  }
-}
-
-
-.breathing-session.hold .animation-circle {
-  animation: hold-animation 7s linear infinite;
-  background-color: #ffeb3b;
-}
-
-@keyframes hold-animation {
-  0%, 100% {
-    transform: scale(0.8); 
-    background-color: #ffeb3b;
-  }
-}
-
-
-.breathing-session.exhale .animation-circle {
-  animation: exhale-animation 8s ease-in-out infinite;
-}
-
-@keyframes exhale-animation {
-  0% {
-    transform: scale(0.8);
-    background-color: #b3e5fc;
-  }
-  100% {
-    transform: scale(1); 
-    background-color: #e0f7fa;
-  }
-} */
-
+/* 
 .breathing-session {
   display: block;
   text-align: center;
@@ -139,13 +55,11 @@
 
 .breathing-session.hold .animation-circle {
   animation: hold-animation 7s linear infinite;
-  background-color: #ffeb3b;
 }
 
 @keyframes hold-animation {
   0%, 100% {
     transform: scale(0.8);
-    background-color: #ffeb3b;
   }
 }
 
@@ -177,5 +91,88 @@
   }
   50% {
     opacity: 0;
+  }
+} */
+
+.breathing-session {
+  display: block;
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.breathing-session .circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.animation-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #007bff;
+  position: relative;
+}
+
+.phase-text {
+  position: absolute;
+  top: 10px;
+  font-size: 1.2em;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.animation-circle p {
+  position: absolute;
+  bottom: 10px;
+  font-size: 1.2em;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 2em;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.breathing-session.inhale .animation-circle {
+  animation: inhale-animation 4s ease-in forwards;
+}
+
+@keyframes inhale-animation {
+  0% {
+    transform: scale(1);
+    background-color: #e0f7fa;
+  }
+  100% {
+    transform: scale(1.2);
+    background-color: #b3e5fc;
+  }
+}
+
+.breathing-session.hold .animation-circle {
+  animation: none;
+  transform: scale(1.2); /* Hold the scale after inhalation */
+}
+
+.breathing-session.exhale .animation-circle {
+  animation: exhale-animation 8s ease-out forwards;
+}
+
+@keyframes exhale-animation {
+  0% {
+    transform: scale(1.2);
+    background-color: #b3e5fc;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #e0f7fa;
   }
 }

@@ -107,9 +107,7 @@ function BreathingSession({ selectedExercise }) {
   const [seconds, setSeconds] = useState(4);
 
   const togglePlayPause = () => {
-    if (selectedExercise) {
-      setIsPlaying(!isPlaying);
-    }
+    setIsPlaying(!isPlaying);
   };
 
   useEffect(() => {
@@ -165,16 +163,15 @@ function BreathingSession({ selectedExercise }) {
     <div className={`breathing-session ${phase}`}>
       <div className="circle-container">
         <div className="animation-circle">
+          <div className="phase-text">{phase.charAt(0).toUpperCase() + phase.slice(1)}</div>
           {isPlaying ? (
             <FaPause className="icon" onClick={togglePlayPause} />
           ) : (
-            <FaPlay className="icon" onClick={togglePlayPause} style={{ animation: !selectedExercise ? 'blink 1s infinite' : 'none' }} />
+            <FaPlay className="icon" onClick={togglePlayPause} />
           )}
           <p>{seconds} sec</p>
-          
         </div>
       </div>
-      {!selectedExercise && <p className="blink-text">Select an exercise to start</p>}
     </div>
   );
 }
