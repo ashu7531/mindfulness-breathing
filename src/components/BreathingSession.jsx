@@ -69,19 +69,24 @@ function BreathingSession({ selectedExercise }) {
 
   return (
     <div className={`breathing-session ${phase}`}>
-      <div className="circle-container">
-        <div className="animation-circle">
-          <div className="phase-text">{phase.charAt(0).toUpperCase() + phase.slice(1)}</div>
-          {isPlaying ? (
-            <FaPause className="icon" onClick={togglePlayPause} />
-          ) : (
-            <FaPlay className="icon" onClick={togglePlayPause} />
-          )}
-          <p>{seconds} sec</p>
-        </div>
+  <div className="circle-container">
+    <div className={`animation-circle ${isPlaying ? 'playing' : ''}`}>
+      <div className="phase-text">
+        {phase.charAt(0).toUpperCase() + phase.slice(1)}
       </div>
+      {isPlaying ? (
+        <FaPause className="icon" onClick={togglePlayPause} />
+      ) : (
+        <FaPlay className="icon" onClick={togglePlayPause} />
+      )}
+      <p>{seconds} sec</p>
     </div>
+  </div>
+</div>
   );
 }
 
 export default BreathingSession;
+
+
+

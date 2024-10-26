@@ -6,9 +6,9 @@ import './ExerciseCards.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const exercises = [
-  { id: 1, name: 'Deep Relaxation', image: img1, description: 'Deep Relaxation' },
-  { id: 2, name: 'Reduce Stress', image: img2, description: 'Reduce Stress' },
-  { id: 3, name: 'Boost Focus', image: img3, description: 'Boost Focus' }
+  { id: 1, name: 'Box Breathing', image: img1, link: 'https://www.medicalnewstoday.com/articles/321805', timeStamp: {'inhale': 4, 'hold': 4, 'exhale': 4, 'hold': 4} },
+  { id: 2, name: 'Reduce Stress', image: img2, link: 'https://www.medicalnewstoday.com/articles/324417', timeStamp: {'inhale': 4, 'hold': 7, 'exhale': 8} },
+  { id: 3, name: 'Resonant Breathing', image: img3,  link: 'https://www.healthline.com/health/breathing-exercise#resonant-breathing', timeStamp: {'inhale': 5, 'exhale': 5} }
 ];
 
 function ExerciseCards({ onSelectExercise }) {
@@ -35,7 +35,7 @@ function ExerciseCards({ onSelectExercise }) {
         <div className="card" onClick={() => onSelectExercise(currentExercise)}>
           <img src={currentExercise.image} alt={currentExercise.name} className="card-img-top" />
           <div className="card-body">
-            <h5>{currentExercise.description}</h5>
+            <a href={currentExercise.link}><h5>{currentExercise.name}</h5></a>
           </div>
         </div>
 
